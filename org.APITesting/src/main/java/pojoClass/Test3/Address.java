@@ -1,35 +1,47 @@
 package pojoClass.Test3;
 
-import java.util.HashMap;
-
 public class Address {
-	HashMap<String, String> addressObj1;
-	HashMap<String, String> addressObj2;
+	private String street;
+	private String city;
+	private String state;
 	
-	//Create the Constructor
-	public Address(HashMap<String, String> addressObj1, HashMap<String, String> addressObj2) {
+	//Create the Empty constructor
+	public Address() {
 		super();
-		this.addressObj1 = addressObj1;
-		this.addressObj2 = addressObj2;
-	}
-
-	//Create the Getter and Setter Methods
-	public HashMap<String, String> getAddressObj1() {
-		return addressObj1;
-	}
-
-	public void setAddressObj1(HashMap<String, String> addressObj1) {
-		this.addressObj1 = addressObj1;
-	}
-
-	public HashMap<String, String> getAddressObj2() {
-		return addressObj2;
-	}
-
-	public void setAddressObj2(HashMap<String, String> addressObj2) {
-		this.addressObj2 = addressObj2;
 	}
 	
-	
+	//Create the Parameterized Constructor
+
+	public Address(String street, String city, String state) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.state = state;
+	}
+
+	//Provide getter and setter Method
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 	
 }

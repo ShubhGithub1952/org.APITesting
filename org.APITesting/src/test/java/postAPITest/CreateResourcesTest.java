@@ -1,13 +1,10 @@
 package postAPITest;
 
-import static io.restassured.RestAssured.DEFAULT_BODY_ROOT_PATH;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 import java.util.Random;
 
-import org.hamcrest.Matchers;
-import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -27,7 +24,7 @@ public class CreateResourcesTest {
 				.body(addProj)
 				.contentType(ContentType.JSON)
 				.when().post("/addProject");
-		 String projId = response.jsonPath().get("projectId");
+		String projId = response.jsonPath().get("projectId");
 		//Header Validation
 		response.then().assertThat().statusCode(201);
 		//response.then().assertThat().time(Matchers.lessThan(2000l));

@@ -1,0 +1,9 @@
+{"firstName":"Shubham",
+"lastName":"Pitale",
+  "address":[{"street":"CST Terminal",
+		"city":"Mumbai",
+		"state":"Maharashtra"},
+	     {"street":"Majestic Terminal",
+		"city":"Bangalore",
+		"state":"Karnataka"}]
+}

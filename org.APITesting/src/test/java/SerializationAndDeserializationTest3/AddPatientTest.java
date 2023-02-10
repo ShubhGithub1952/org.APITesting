@@ -2,31 +2,22 @@ package SerializationAndDeserializationTest3;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
-import com.fasterxml.jackson.databind.json.JsonMapper;
+import org.codehaus.jackson.map.ObjectMapper;
 
-import pojoClass.Test3.AddPatient1PojoClass;
+import pojoClass.Test3.Address;
+import pojoClass.Test3.AddressPojoClass;
 
 public class AddPatientTest {
 	public static void main(String[] args) throws Throwable {
-		HashMap<String, String> mapObj1 =new HashMap<String, String>();
-		mapObj1.put("street","abc");
-		mapObj1.put("city","Hyderabad");
-		mapObj1.put("state","TL");
-		HashMap<String, String> mapObj2 =new HashMap<String, String>();
-		mapObj2.put("street","xyz");
-		mapObj2.put("city","Chennai");
-		mapObj2.put("state","TN");
-		
-		ArrayList<HashMap<String, String>> addressMapObj = new ArrayList<HashMap<String, String>>();
-		addressMapObj.add(mapObj1);
-		addressMapObj.add(mapObj2);
-		
-		AddPatient1PojoClass addPatientObj = new AddPatient1PojoClass("JayDeva", "Shukla", addressMapObj);
-		
-		//Serialization 
-		JsonMapper jsonMapperObj = new JsonMapper();
-		jsonMapperObj.writeValue(new File("./ComplexJSONBody2.json"), addPatientObj);
+		Address addressObj1 = new Address("CST Terminal", "Mumbai", "Maharashtra");
+		Address addressObj2 = new Address("Majestic Terminal", "Bangalore", "Karnataka");
+		List<Address> addressObj = new ArrayList<Address>();
+		addressObj.add(addressObj1);
+		addressObj.add(addressObj2);
+		AddressPojoClass addAddressObj = new AddressPojoClass("Shubham", "Pitale", addressObj);
+		ObjectMapper jsonObj = new ObjectMapper();
+		jsonObj.writeValue(new File("./AddressJson.json"), addAddressObj);
 	}
 }
