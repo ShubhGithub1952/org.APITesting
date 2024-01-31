@@ -20,6 +20,7 @@ public class CreateResourcesAndVerifyTest {
 	public void createResources() {
 		// Create The Resources inside Server
 		baseURI="http://localhost:8084";
+		//String base_URI = "https://reqres.in/";
 		Random random = new Random();
 		int randomNumber = random.nextInt();
 		AddProjectPOJOTest addProj = new AddProjectPOJOTest("SanketS", "PicasaArt"+randomNumber, "In-Progress", "28");
